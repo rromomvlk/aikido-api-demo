@@ -1,0 +1,13 @@
+# Blueprint de despliegue para Render (https://render.com)
+# Con este archivo en el repo, Render configura el servicio automaticamente.
+services:
+  - type: web
+    name: aikido-api-demo
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 20
